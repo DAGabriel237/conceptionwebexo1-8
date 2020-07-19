@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulaore client</title>
+        <style>
+        fieldset{
+            width: 40em;
+            margin: 10em auto;
+    
+        }
+        form{
+            width:100%;
+            margin: 0 auto;
+        }
+        label , input[type='text']{
+            width: 50%;
+            margin-bottom: 2%;
+
+        }
+        
+        label{
+            padding-right: 15%;
+            padding-left: 5%;
+        }
+        label#name-label{
+            padding-right: 22%;
+        }
+        label#adresse-label{
+            padding-right: 20%;
+        }
+        input[type='submit']{
+
+            background-color: rgba(30, 144, 255, 0.8);/*30144255*/
+            border-color: rgba(49, 136, 223, 0.8);
+            position: relative;
+            bottom: 2%;
+            left: 75%;
+            height: 30px;
+            width: 80px;
+            border-radius: 5px;
+            
+        }
+        
+        </style>
+    </head>
+    <body>
+        <fieldset title="Adresse client">
+            <legend>Adresse client</legend>
+            <form action="exo1.php" method="post" id="form1">
+                <label for="first-name">
+                    First Name
+                </label>
+                <input type="text" id="first-name" name="first-name" placeholder="write your first name here" ><br>
+                <label for="name" id="name-label">
+                        Name
+                </label>
+                <input type="text" id="name" name="name" placeholder="write your  name here" ><br>
+                <label for="adresse" id="adresse-label">
+                            Adresse
+                </label>
+                <input type="text" id="adresse" name="adresse" placeholder="write your  adresse here" ><br>
+                <label for="postal-code">
+                                Postal Code
+                </label>
+                <input type="text" id="postal-code" name="postal-code" placeholder="write your  postal-code here" pattern="[0-9]{5}" ><br>
+                <input type="submit" name="submit" value="Submit" onclick="empty()">
+            </form>
+
+        </fieldset>
+        <script>
+            function empty(){
+                alert("valeur vide"+document.getElementById('name').value);
+                if (document.getElementById('name').value=='' ||document.getElementById('first-name').value=='' || document.getElementById('adresse').value==''|| document.getElementById('postal-code').value==''){
+                    alert("vous devez remplirir tous les champs");
+                    document.getElementById('form1').action="exo1.html";
+                }
+            }
+        </script>
+    </body>
+</html>
